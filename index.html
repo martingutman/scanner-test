@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Request to localhost:44343/connect</div>
+    <div id="response">Loading the response...</div>
+    <script>
+        const endpoint = 'https://localhost:44343/connect';
+
+        const responseElement = document.getElementById('response');
+
+
+        // Make an AJAX request using the Fetch API
+        fetch(endpoint)
+            .then(response => response.json())
+            .then(data => {
+                // Update the response element with the data from the server
+                responseElement.innerHTML = `<p>Server Response: ${JSON.stringify(data)}</p>`;
+            })
+            .catch(error => {
+                responseElement.innerHTML = `<p>Server Response: ${JSON.stringify('Error:', error)}</p>`;
+            });
+    </script>
+</body>
+
+</html>
