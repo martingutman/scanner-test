@@ -11,13 +11,13 @@
     <div>Request to http://192.168.101.1/connect</div>
     <div id="response">Loading the response...</div>
     <script>
-        const endpoint = 'https://192.168.101.1/connect';
+        const proxyUrl = 'https://scanner-test-b3a5.onrender.com/proxy.php';
 
         const responseElement = document.getElementById('response');
 
 
         // Make an AJAX request using the Fetch API
-        fetch(endpoint, {
+        fetch(proxyUrl, {
             method: 'GET',
             headers: {
                 'Accept': '*/*',
