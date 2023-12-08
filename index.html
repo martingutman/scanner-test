@@ -14,29 +14,16 @@
         const proxyUrl = 'https://scanner-test-b3a5.onrender.com/proxy.php';
 
         const responseElement = document.getElementById('response');
-
-
-        // Make an AJAX request using the Fetch API
-        fetch(proxyUrl, {
-            method: 'GET',
-            headers: {
-                'Accept': '*/*',
-                'Accept-Language': 'en-US,en;q=0.9',
-                'AppInstId': '04676e6c-e9fd-430c-8ea6-d6add0d3ddf6',
-                'Connection': 'keep-alive',
-                'Referer': 'http://192.168.101.1/index.html',
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
-            },
-            compress: true, // equivalent to --compressed in curl
-            insecure: true, // equivalent to --insecure in curl
-        })
-            .then(response => response.json())
+        // Make a request to the proxy script
+        fetch(proxyUrl)
+            .then(response => response.text())
             .then(data => {
-                // Update the response element with the data from the server
-                responseElement.innerHTML = `<p>Server Response: ${JSON.stringify(data)}</p>`;
+                // Handle the response data
+                console.log(data);
             })
             .catch(error => {
-                responseElement.innerHTML = `<p>Server Response: ${JSON.stringify('Error:', error)}</p>`;
+                // Handle errors
+                console.error('Error:', error);
             });
     </script>
 </body>
