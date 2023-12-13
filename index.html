@@ -10,29 +10,17 @@
 <body>
     <div>Request to http://192.168.101.1/connect</div>
     <div id="response">Loading the response...</div>
-    <script>
-        const proxyUrl = 'https://192.168.101.1/disconnect';
+    
+    <button class="fetchButton" data-request-type="connect">Connect</button>
+    <button class="fetchButton" data-request-type="disconnect">Disconnect</button>
+    <button class="fetchButton" data-request-type="time">Time</button>
+    <button class="fetchButton" data-request-type="scan">Scan</button>
+    <button class="fetchButton" data-request-type="currentdevicestateex">Currentdevicestateex</button>
+    <button class="fetchButton" data-request-type="stop">Stop</button>
 
-        const responseElement = document.getElementById('response');
-        // Make a request to the proxy script
-        fetch(proxyUrl, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'AppInstId': '8a5c90a4-5ee1-4dcf-95cc-8e6c27e01dd1'
-                }
-            })
-            .then(response => response.text())
-            .then(data => {
-                // Handle the response data
-                console.log(data);
-            })
-            .catch(error => {
-                // Handle errors
-                console.error('Error:', error);
-            });
-    </script>
+    <div id="imageList"></div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
