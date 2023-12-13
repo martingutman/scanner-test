@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Scanner Test</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <body>
+    <section>
+      <div>
+        <h1>Scanner Test</h1>
+        <p>Request to http://192.168.101.1/connect</p>
+        <p id="response">Loading the response...</p>
+      </div>
+    </section>
 
-<body>
-    <div>Request to http://192.168.101.1/connect</div>
-    <div id="response">Loading the response...</div>
-    
-    <button class="fetchButton" data-request-type="connect">Connect</button>
-    <button class="fetchButton" data-request-type="disconnect">Disconnect</button>
-    <button class="fetchButton" data-request-type="time">Time</button>
-    <button class="fetchButton" data-request-type="scan">Scan</button>
-    <button class="fetchButton" data-request-type="currentdevicestateex">Currentdevicestateex</button>
-    <button class="fetchButton" data-request-type="stop">Stop</button>
-
-    <div id="imageList"></div>
-
+    <section>
+      <div class="images">
+        <div id="imageList"></div>
+      </div>
+    </section>
+    <section>
+      <div class="buttons">
+        <button class="fetchButton" data-request-type="connect">Connect</button>
+        <button class="fetchButton" data-request-type="disconnect">
+          Disconnect
+        </button>
+        <button class="fetchButton" data-request-type="time">Time</button>
+        <button class="fetchButton" data-request-type="scan">Scan</button>
+        <button class="fetchButton" data-request-type="currentdevicestateex">
+         Currentdevicestateex
+        </button>
+        <button class="fetchButton" data-request-type="stop">Stop</button>
+    </section>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

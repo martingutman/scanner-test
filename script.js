@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function makeRequest(requestConfig) {
         responseElement.innerHTML = "Loading the response...";
 
-        /*
+        
             imagesArray.push({
                 front: 'https://picsum.photos/id/237/200/300',
                 rear: 'https://picsum.photos/seed/picsum/200/300'
             })
             updateImageList();
-            */
+            
 
         fetch(requestConfig.url, {
             method: requestConfig.method,
