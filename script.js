@@ -8,38 +8,38 @@ document.addEventListener("DOMContentLoaded", function () {
         AppInstId: "8a5c90a4-5ee1-4dcf-95cc-8e6c27e01dd1",
     };
 
-    const url = "https://192.168.101.1/";
+    const url = "https://192.168.101.1";
 
     const imagesArray = [];
 
     const requests = {
         connect: {
-            url: url + "connect",
+            url: url + "/connect",
             method: "GET",
             headers: headers,
         },
         disconnect: {
-            url: url + "disconnect",
+            url: url + "/disconnect",
             method: "GET",
             headers: headers,
         },
         time: {
-            url: url + "time",
+            url: url + "/time",
             method: "GET",
             headers: headers,
         },
         scan: {
-            url: url + "scan",
+            url: url + "/scan",
             method: "GET",
             headers: headers,
         },
         currentdevicestateex: {
-            url: url + "currentdevicestateex",
+            url: url + "/currentdevicestateex",
             method: "GET",
             headers: headers,
         },
         stop: {
-            url: url + "stop",
+            url: url + "/stop",
             method: "GET",
             headers: headers,
         },
@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 responseElement.innerHTML = data;
 
                 if (requestConfig === requests.currentdevicestateex) {
+
+                    const response = JSON.parse(data)
+                    var data = response.data;
+
                     if (
                         data.Documents &&
                         Array.isArray(data.Documents) &&
