@@ -43,6 +43,16 @@ document.addEventListener("DOMContentLoaded", function () {
             method: "GET",
             headers: headers,
         },
+        config: {
+            url: url + "/config.json",
+            method: "GET",
+            headers: headers,
+        },
+        getinfo: {
+            url: url + "/getinfo",
+            method: "GET",
+            headers: headers,
+        },
     };
 
     document.body.addEventListener("click", function (event) {
@@ -77,8 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (requestConfig === requests.currentdevicestateex) {
 
                     const response = JSON.parse(data)
-                    var data = response.data;
-
+                    var data = response;
                     if (
                         data.Documents &&
                         Array.isArray(data.Documents) &&
